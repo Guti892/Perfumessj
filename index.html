@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfumes SJ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc;
+        }
+        .card {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .scroll-mt-24 {
+            scroll-margin-top: 6rem;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 12px;
+            position: relative;
+        }
+        .close-button {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #4a5568;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header y Navegación -->
+    <header class="bg-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto p-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-gray-900">PERFUMES SJ</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#hombre" class="text-gray-600 hover:text-gray-900 font-semibold transition-colors duration-200">Perfumes de Hombre</a></li>
+                    <li><a href="#mujer" class="text-gray-600 hover:text-gray-900 font-semibold transition-colors duration-200">Perfumes de Mujer</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección de Héroe -->
+    <main class="container mx-auto p-6">
+        <section class="text-center py-20 bg-gray-200 rounded-3xl mb-12">
+            <h2 class="text-5xl font-extrabold text-gray-900 mb-4 leading-tight">Tu Fragancia Perfecta Te Espera</h2>
+            <p class="text-xl text-gray-700 max-w-2xl mx-auto mb-8">Descubre nuestra exclusiva colección de perfumes para hombre y mujer. Calidad y estilo en cada botella.</p>
+            <a href="#hombre" class="bg-gray-800 text-white font-bold py-3 px-8 rounded-full hover:bg-gray-700 transition-colors duration-300 transform hover:scale-105 inline-block">Explora la Colección</a>
+        </section>
+
+        <!-- Botón para el Asistente de IA -->
+        <div class="flex justify-center mb-12">
+            <button id="open-ai-modal" class="bg-purple-600 text-white font-bold py-3 px-8 rounded-full hover:bg-purple-700 transition-colors duration-300 transform hover:scale-105">
+                Encontrar mi Perfume ✨
+            </button>
+        </div>
+
+        <!-- Perfumes de Hombre -->
+        <section id="hombre" class="py-12 scroll-mt-24">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">Perfumes de Hombre</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Tarjeta de Producto -->
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Paco Rabanne One Million -->
+                    <img src="https://medias.rabanne.com/cdn-cgi/image/width=700,quality=90/https://medias.rabanne.com/medias/sys_master/images/ha6/h84/10571549933598/10571549868062/10571549868062.jpg" alt="Paco Rabanne One Million" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Paco Rabanne One Million</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">64,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+                </div>
+                
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Versace Eros -->
+                    <img src="https://www.versace.com/on/demandware.static/-/Library-Sites-ver-library/default/dw0f445064/images/banners/FRAGRANCES/EROS_BLUE_SEOBANNER.jpg" alt="Versace Eros" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Versace Eros</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">59,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+                </div>
+                
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Dior Sauvage -->
+                    <img src="https://www.theperfumeshop.com/medias/sys_master/root/h6d/h74/8890258718750/Sauvage_Refill_S222_2400x2400-5/Sauvage-Refill-S222-2400x2400-5.jpg">
+                    <h3 class="text-xl font-semibold text-center mb-1">Dior Sauvage</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">64,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+ </div>
+                
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Dior Sauvage -->
+                    <img src="https://i.pinimg.com/originals/d5/87/ae/d587ae52b1fc423e38cdbf5f83412604.jpg">
+                    <h3 class="text-xl font-semibold text-center mb-1">Dior Sauvage Elixir</h3>
+                    <p class="text-gray-500 text-sm mb-2">60ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">69,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+ </div>
+                
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Dior Sauvage -->
+                    <img src="https://www.dior.com/dw/image/v2/BGXS_PRD/on/demandware.static/-/Library-Sites-DiorSharedLibrary/default/dw1131f094/images/beauty/01-FRAGRANCES/2024/SAUVAGE-EAU-FORTE/PDP/A24F094_SAUVAGE_EAU_FORTE_Mood_Pack-Ingredient_1850x2000.jpg?sw=1280">
+                    <h3 class="text-xl font-semibold text-center mb-1">Dior Sauvage Eau Forte</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">64,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+</div>
+                
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Dior Sauvage -->
+                    <img src="https://www.dior.com/dw/image/v2/BGXS_PRD/on/demandware.static/-/Library-Sites-DiorSharedLibrary/default/dw052dafa6/images/beauty/05-PRODUCTS/01-FRAGRANCES/SAUVAGE/Y0685240/Sauvage_Refill_S222_1850x2000-10.jpg?sw=1280">
+                    <h3 class="text-xl font-semibold text-center mb-1">Dior Sauvage Eau de Toilette</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">64,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+                </div>
+                
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Valentino Born In Roma Intense -->
+                    <img src="https://www.druni.es/media/catalog/product/7/6/7641_2.jpg?quality=80&fit=bounds&height=700&width=700&canvas=700:700" alt="Valentino Born In Roma Intense" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Valentino Born In Roma Intense</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">45,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+ </div>
+                
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Valentino Born In Roma Intense -->
+                    <img src="https://static.thcdn.com/images/large/original//productimg/1600/1600/12852950-1355132315630181.jpg" alt="Valentino Born In Roma Intense" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Creed Silver Mountain Water</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">119,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+</div>
+                
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Valentino Born In Roma Intense -->
+                    <img src="https://static.thcdn.com/images/large/original//productimg/1600/1600/12852879-4645192893097772.jpg" alt="Valentino Born In Roma Intense" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Creed Himalaya</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">119,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+
+                </div>
+                
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Creed Aventus -->
+                    <img src="https://static.thcdn.com/images/large/original//productimg/1600/1600/12852836-8295132795878371.jpg" alt="Creed Aventus" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Creed Aventus</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">119,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+                  </div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Bvlgari Pour Homme -->
+                    <img src="https://cdn2.primor.eu/media/catalog/product/cache/8d3aba296f7a18b5251ee30fa5db42b2/4/A/4AM00070_1_09c9.jpg" alt="Bvlgari Pour Homme" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Bvlgari Pour Homme</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">64,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+</div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Bvlgari Pour Homme -->
+                    <img src="https://nuochoamy.vn/upload/sanpham/large/nuoc-hoa-jo-malone-london-wood-sage-1625556384-649e70.jpg" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Jo Malone London Wood Sage & Sea Salt</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">69,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+</div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Bvlgari Pour Homme -->
+                    <img src="https://sdcdn.io/tf/tf_sku_T8JM01_2000x2000_0.png?height=700px&width=700px" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Tom Ford White Suede Eau de Parfum</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">74,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+</div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Bvlgari Pour Homme -->
+                    <img src="https://sdcdn.io/tf/tf_sku_T1XG01_2000x2000_0.png?height=700px&width=700px" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Tom Ford Oud Wood Eau de Parfum</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">74,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+</div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Bvlgari Pour Homme -->
+                    <img src="https://perfumespararegalo.com/1437-large_default_2x/hermes-terre-d-hermes-edt-sp.jpg" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Terre d’Hermès Eau de Toilette</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">74,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+ </div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Bvlgari Pour Homme -->
+                    <img src="https://www.versace.com/dw/image/v2/BGWN_PRD/on/demandware.static/-/Sites-ver-master-catalog/default/dw2e2158d6/original/90_R720010-R100MLS_RNUL_22_PourHommeEDT100ml--Versace-online-store_0_1.jpg?sw=850&q=85&strip=true" alt="Bvlgari Pour Homme" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Versace Pour Homme</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">54,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+</div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Bvlgari Pour Homme -->
+                    <img src="https://tse1.explicit.bing.net/th/id/OIP.Qz3obMDSHSISA-2ZPSHMFgAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Byredo Super Cedar</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">99,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Perfumes de Mujer -->
+        <section id="mujer" class="py-12 scroll-mt-24">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">Perfumes de Mujer</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Tarjeta de Producto -->
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Tom Ford Lost Cherry -->
+                    <img src="https://cdn.idealo.com/folder/Product/6761/7/6761762/s11_produktbild_max_3/tom-ford-lost-cherry-eau-parfum-100ml.jpg" alt="Tom Ford Lost Cherry" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Tom Ford Lost Cherry</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">69,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+                </div>
+                
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Prada Paradoxe -->
+                    <img src="https://th.bing.com/th/id/R.4cd0b7d7e85aafc316bd949fe0bfbad0?rik=VSi49FO7Jx2Ocw&pid=ImgRaw&r=0" alt="Prada Pradoxe" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Prada Paradoxe</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">39,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+                </div>
+                
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Gucci Guilty H. -->
+                    <img src="https://cdn.notinoimg.com/detail_main_hq/gucci/3616301976141_03_/guilty-pour-femme___241021.jpg" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Gucci Guilty H.</h3>
+                    <p class="text-gray-500 text-sm mb-2">90ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">59,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+</div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de C.H. Good Girl -->
+                    <img src="https://static.netshoes.com.br/produtos/perfume-feminino-good-girl-carolina-herrera-eau-de-parfum-30ml/60/L73-0065-460/L73-0065-460_zoom2.jpg?ts=1601284947&" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">C.H. Good Girl</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">59,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+</div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de C.H. Good Girl -->
+                    <img src="https://static.beautytocare.com/media/catalog/product/cache/global/image/85e4522595efc69f496374d01ef2bf13/c/a/carolina-herrera-good-girl-blush-eau-de-parfum-50ml.jpg" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">C.H. Good Girl Blush</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">59,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Versace Bright Crystal -->
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.E3bqSGUM5YgYpkBrBA-f4wHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Versace Bright Crystal" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Versace Bright Crystal</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">39,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+               </div>
+                
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Tom Ford Black Orchid -->
+                    <img src="https://www.druni.es/media/catalog/product/6/0/6002_2.jpg?quality=80&fit=bounds&height=700&width=700&canvas=700:700" alt="Tom Ford Black Orchid" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Tom Ford Black Orchid</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">69,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button> </div>
+                
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de YSL Black Opium -->
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.lhr5Y_d_1085OnKvEpDb9QAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="YSL Black Opium" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">YSL Black Opium</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">59,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Dior J'adore -->
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.jdPKgiPC5FoOwCj25bRmcAHaHU?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Dior J'adore" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Dior J'adore</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">74,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Coco Chanel Mademoiselle -->
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.tdIOyh9kMIyWUNs6o25x0gHaJ3?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Coco Chanel Mademoiselle" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Coco Chanel Mademoiselle</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">54,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+</div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Coco Chanel Noir -->
+                    <img src="https://fimgs.net/photogram/p1200/qz/dp/1zHQwgdCk2kX5rL4.jpg" alt="Coco Chanel Mademoiselle" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Coco Chanel Noir</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">54,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+</div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de YSL Libre L'Absolu Platine -->
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.ycF3LKq5h7qf2QxMRrfpQQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="YSL Libre L'Absolu Platine" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">YSL Libre L'Absolu Platine</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">74,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+               
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de YSL Mon Paris -->
+                    <img src="https://th.bing.com/th/id/R.737eb67bf4cc68b2b53aacc831d59158?rik=fXE6%2bhaiJf5dHw&pid=ImgRaw&r=0" alt="YSL Mon Paris" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">YSL Mon Paris</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">84,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Gucci Bloom -->
+                    <img src="https://th.bing.com/th/id/R.f96fcb5379724df0c218f29ffe795705?rik=WMkvPfWLoF1HSg&pid=ImgRaw&r=0" alt="Gucci Bloom" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Gucci Bloom</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">49,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Gucci Flora Gorgeous Gardenia -->
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.g9HkqIwz-vORrlg11IpU2QHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Gucci Flora Gorgeous Gardenia" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Gucci Flora Gorgeous Gardenia</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">64,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Dior Addict Eau Fraîche -->
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.6Pvvq89XnUwJfTCCmfJhsAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Dior Addict Eau Fraîche" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Dior Addict Eau Fraîche</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">49,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Miss Dior Blooming Bouquet -->
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.IshIk0QnWD0AjF_L_0FsPQHaIA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Miss Dior Blooming Bouquet" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Miss Dior Blooming Bouquet</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">64,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Eau Des Merveilles -->
+                    <img src="https://th.bing.com/th/id/R.e24373f2ce79aaad10184ace9cdaef24?rik=%2fbA2Jq2ZFbhSmw&pid=ImgRaw&r=0" alt="Eau Des Merveilles" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Eau Des Merveilles</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">74,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de My Way Giorgio Armani -->
+                    <img src="https://media.iciparisxl.nl/medias/prd-front-1290505-954x1192.jpg?context=bWFzdGVyfHByZC1pbWFnZXN8NDcwNzczfGltYWdlL2pwZWd8aDEyL2hhOS8xMDc2MTU2ODc4MDMxOC9wcmQtZnJvbnQtMTI5MDUwNV85NTR4MTE5Mi5qcGd8MzFkNTRjNTY3Yzg1OTI5ZTJhZjM4NmJiMWU1MTMyMzQyMDgyMGRhMmIzZGZlYTA2M2Y4NzQ2OWIwMWU3ZjNiNw" alt="My Way Giorgio Armani" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">My Way Giorgio Armani</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">59,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Gabrielle Chanel -->
+                    <img src="https://puls-img.chanel.com/1688483382665-oneplpherobannermobile1500x1600pxjpg_1600x1500.jpg" alt="Gabrielle Chanel" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Gabrielle Chanel</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">84,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Chanel Chance Eau Fraîche -->
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.wB56R-cPxT65ncL_0loFWwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Chanel Chance Eau Fraîche" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Chanel Chance Eau Fraîche</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">74,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Chanel Nº5 -->
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.L1jTq9rsR6bBE_EUJQcgugHaJl?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Chanel Nº5" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Chanel Nº5</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">74,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Chanel Chance Eau Tendre -->
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.LTQHL9cwfnyC0O08xiwA1AHaHT?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Chanel Chance Eau Tendre" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Chanel Chance Eau Tendre</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">74,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+
+ </div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Coco Chanel Mademoiselle -->
+                    <img src="https://www.sephora.es/on/demandware.static/-/Sites-masterCatalog_Sephora/default/dwafa758b4/images/hi-res/alternates/PID_alternate1/PID_alternate1_916/P3809040_1.jpg" alt="Coco Chanel Mademoiselle" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Idôle Lancome</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">59,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+ </div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Coco Chanel Mademoiselle -->
+                    <img src="https://cdn.shopify.com/s/files/1/0259/7733/products/armani-si-passione_1024x1024.png?v=1534396593" alt="Coco Chanel Mademoiselle" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Armani Sì Passione</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">54,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+ </div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Coco Chanel Mademoiselle -->
+                    <img src="https://fimgs.net/photogram/p1200/xs/cf/bpETTaD0YsOkY5gE.jpg" alt="Coco Chanel Mademoiselle" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Miracle Lancome</h3>
+                    <p class="text-gray-500 text-sm mb-2">100ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">69,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl card flex flex-col items-center">
+                    <!-- Reemplaza esta URL con la URL de tu imagen de Bvlgari Omnia Amethyste -->
+                    <img src="https://cdn.shopify.com/s/files/1/2042/3011/products/bvlgari-omnia-amethyste-eau-de-toilette-para-mujer-65-ml___28_1024x1024@2x.jpg?v=1574745183" alt="Bvlgari Omnia Amethyste" class="rounded-lg mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-center mb-1">Bvlgari Omnia Amethyste</h3>
+                    <p class="text-gray-500 text-sm mb-2">65ml</p>
+                    <p class="text-2xl font-bold text-gray-900 mb-4">54,99€</p>
+                    <button class="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors duration-200 w-full">Comprar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Perfumes SJ. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal para el asistente de IA -->
+    <div id="ai-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close-button">&times;</span>
+            <h3 class="text-2xl font-bold mb-4">Encuentra tu Fragancia Ideal</h3>
+            <p class="mb-4">Describe el tipo de perfume que buscas y te sugeriremos una opción de nuestro catálogo.</p>
+            <textarea id="ai-input" class="w-full h-24 p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Ej: Una fragancia fresca para el día a día..."></textarea>
+            <button id="ai-suggest-button" class="bg-purple-600 text-white font-bold py-2 px-6 rounded-full hover:bg-purple-700 transition-colors duration-200 w-full">Sugerir</button>
+            <div id="ai-response" class="mt-6 p-4 bg-gray-100 rounded-lg hidden">
+                <p class="font-bold">Nuestra sugerencia:</p>
+                <div id="ai-result-content" class="mt-2 text-gray-700"></div>
+                <button id="close-suggestion" class="bg-gray-500 text-white font-bold py-1 px-4 mt-4 rounded-full hover:bg-gray-600 transition-colors duration-200">Cerrar</button>
+            </div>
+            <div id="ai-loading" class="mt-6 flex justify-center items-center hidden">
+                <svg class="animate-spin h-5 w-5 mr-3 text-purple-600" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span>Buscando la fragancia perfecta...</span>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const openModalButton = document.getElementById('open-ai-modal');
+            const closeModalButton = document.getElementById('close-modal');
+            const modal = document.getElementById('ai-modal');
+            const aiInput = document.getElementById('ai-input');
+            const aiSuggestButton = document.getElementById('ai-suggest-button');
+            const aiResponse = document.getElementById('ai-response');
+            const aiResultContent = document.getElementById('ai-result-content');
+            const aiLoading = document.getElementById('ai-loading');
+            const closeSuggestionButton = document.getElementById('close-suggestion');
+
+            // Hardcoded catalog based on the provided PDF
+            const perfumeCatalog = [
+                // Hombres
+                "Paco Rabanne One Million, Precio: 64,99€, Descripción: Fragancia fresca y especiada.",
+                "Versace Eros, Precio: 59,99€, Descripción: Perfume fresco, amaderado y ligeramente oriental.",
+                "Valentino Born In Roma Intense, Precio: 45,99€, Descripción: Fragancia floral y amaderada, con notas de vainilla.",
+                "Dior Sauvage, Precio: 64,99€, Descripción: Perfume fresco y crudo. Inspirado en el desierto.",
+                "Gucci Guilty H., Precio: 59,99€, Descripción: Perfume amaderado, especiado, con toques de vainilla.",
+                "Creed Aventus, Precio: 119,99€, Descripción: Fragancia afrutada, dulce y amaderada.",
+                "Tom Ford Black Orchid, Precio: 69,99€, Descripción: Fragancia dulce, amaderada y afrutada, con toques de vainilla.",
+                "Bvlgari Pour Homme, Precio: 64,99€, Descripción: Perfume fresco y amaderado.",
+
+                // Mujeres
+                "Tom Ford Lost Cherry, Precio: 69,99€, Descripción: Perfume dulce, con notas afrutadas y amaderadas.",
+                "Prada Paradoxe, Precio: 39,99€, Descripción: Fragancia floral, afrutada y dulce, con toques de vainilla.",
+                "C.H. Good Girl, Precio: 59,99€, Descripción: Perfume dulce, con notas de café y flores.",
+                "Versace Bright Crystal, Precio: 39,99€, Descripción: Fragancia fresca y afrutada, con toques de flores.",
+                "YSL Black Opium, Precio: 59,99€, Descripción: Perfume dulce, con notas de café y flores blancas.",
+                "Dior J'adore, Precio: 74,99€, Descripción: Perfume floral y afrutado, con toques de jazmín.",
+                "Coco Chanel Mademoiselle, Precio: 54,99€, Descripción: Perfume dulce, floral, afrutado y con toques amaderados.",
+                "Bvlgari Omnia Amethyste, Precio: 54,99€, Descripción: Perfume floral y amaderado.",
+            ];
+
+            const catalogueString = perfumeCatalog.join("\n");
+            
+            const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=";
+            const API_KEY = "";
+
+            openModalButton.onclick = () => {
+                modal.style.display = 'block';
+                aiInput.value = '';
+                aiResponse.classList.add('hidden');
+            };
+
+            closeModalButton.onclick = () => {
+                modal.style.display = 'none';
+            };
+
+            closeSuggestionButton.onclick = () => {
+                aiResponse.classList.add('hidden');
+            };
+
+            window.onclick = (event) => {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            };
+            
+            async function generateSuggestion(description) {
+                if (!description) {
+                    aiResultContent.innerHTML = "<p class='text-red-500'>Por favor, describe la fragancia que buscas.</p>";
+                    aiResponse.classList.remove('hidden');
+                    return;
+                }
+
+                aiLoading.classList.remove('hidden');
+                aiSuggestButton.disabled = true;
+
+                const systemPrompt = `Eres un asistente de fragancias para una tienda de perfumes. El catálogo de productos es:
+                ${catalogueString}
+                
+                Tu tarea es recomendar el perfume de este catálogo que mejor se adapte a la descripción del cliente. Proporciona solo el nombre del perfume y el precio. Luego, explica brevemente, en una o dos oraciones, por qué es la mejor opción basándote en el perfil de fragancia del catálogo. Si no puedes encontrar una coincidencia, di que no puedes encontrar un perfume que coincida con la descripción. No inventes información.`;
+
+                const userQuery = `Sugiéreme un perfume para: ${description}`;
+
+                const payload = {
+                    contents: [{ parts: [{ text: userQuery }] }],
+                    systemInstruction: {
+                        parts: [{ text: systemPrompt }]
+                    },
+                };
+
+                const url = `${GEMINI_API_URL}${API_KEY}`;
+                let response;
+                try {
+                    response = await fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    const text = result.candidates[0].content.parts[0].text;
+                    aiResultContent.innerHTML = text.replace(/\n/g, '<br>');
+                    aiResponse.classList.remove('hidden');
+
+                } catch (error) {
+                    console.error('Error calling Gemini API:', error);
+                    aiResultContent.innerHTML = "<p class='text-red-500'>Hubo un error al buscar la sugerencia. Por favor, inténtalo de nuevo más tarde.</p>";
+                    aiResponse.classList.remove('hidden');
+                } finally {
+                    aiLoading.classList.add('hidden');
+                    aiSuggestButton.disabled = false;
+                }
+            }
+
+            aiSuggestButton.onclick = () => {
+                generateSuggestion(aiInput.value);
+            };
+
+            aiInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    generateSuggestion(aiInput.value);
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
+
